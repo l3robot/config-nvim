@@ -33,3 +33,10 @@ o.splitbelow = true
 o.mouse = "a"
 o.clipboard = "unnamedplus" -- use system clipboard
 
+-- Folding powered by Treesitter
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldlevel = 99 -- starts with all folds open
+
+
+

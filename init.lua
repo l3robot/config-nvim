@@ -1,6 +1,8 @@
 -- Loader keys early so plugins see them
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
+require("config.options")
+require("config.keymaps")
 
 -- Bootstrap lazy.vim (plugin manager)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -13,6 +15,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("options")
-require("keymaps")
-require("plugins")
+require("lazy").setup({ import = "plugins" })
